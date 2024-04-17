@@ -4,10 +4,10 @@ import altair as alt
 
 # Assuming you have already calculated grouped_data
 # and reset the index to create grouped_dataset
-
+st.write('Mugilan Thiayagrajan was here!!!')
 df = pd.read_csv("higher_ed_employee_salaries.csv")
 #st.dataframe(df)
-df.drop.null()
+#df.drop.null()
 #group by years and find the mean
 grouped_data = df.groupby(['Year', 'Job Description'])['Earnings'].mean()
 
