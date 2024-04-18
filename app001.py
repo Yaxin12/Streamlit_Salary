@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-# Assuming you have already calculated grouped_data
-# and reset the index to create grouped_dataset
+
 st.title('Higher Education Employee Salaries')
 st.write('Pick a job description on the left pane to view the average salary of that role over time')
 
