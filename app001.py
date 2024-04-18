@@ -9,11 +9,21 @@ st.write('Pick a job description on the left pane to view the average salary of 
 st.write(f'<span style="font-size: x-small;">Mugilan Thiayagrajan was here!!!</span>', unsafe_allow_html=True)
 #st.write('Mugilan Thiayagrajan was here!!!')
 
-df = pd.read_csv("higher_ed_employee_salaries.csv")
+
+# Add the caching decorator
+@st.cache_data
+def load_data(csv):
+    df = pd.read_csv(csv)
+    return df
+
+# Load the data CSV file
+salary = load_data("data/higher_ed_employee_salaries.csv")
+
+
 #st.dataframe(df)
 #df.drop.null()
 #group by years and find the mean
-grouped_data = df.groupby(['Year', 'Job Description'])['Earnings'].mean()
+grouped_data = salary.groupby(['Year', 'Job Description'])['Earnings'].mean()
 
 # Resetting the index and renaming columns
 grouped_df = grouped_data.reset_index()
