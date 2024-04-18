@@ -4,7 +4,12 @@ import altair as alt
 
 # Assuming you have already calculated grouped_data
 # and reset the index to create grouped_dataset
-st.write('Mugilan Thiayagrajan was here!!!')
+st.title('Higher Education Employee Salaries')
+st.write('Pick a job description on the left pane to view the average salary of that role over time')
+
+st.write(f'<span style="font-size: x-small;">Mugilan Thiayagrajan was here!!!</span>', unsafe_allow_html=True)
+#st.write('Mugilan Thiayagrajan was here!!!')
+
 df = pd.read_csv("higher_ed_employee_salaries.csv")
 #st.dataframe(df)
 #df.drop.null()
@@ -30,4 +35,4 @@ mm_chart = alt.Chart(filtered_df).mark_line().encode(
 )
 
 # Display Altair chart
-st.altair_chart(mm_chart)
+st.altair_chart(mm_chart, use_container_width=True)
