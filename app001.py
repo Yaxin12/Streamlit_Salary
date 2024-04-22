@@ -22,6 +22,7 @@ salary = load_data("data/higher_ed_employee_salaries.csv")
 
 #st.dataframe(df)
 #df.drop.null()
+df = df.dropna() 
 #group by years and find the mean
 grouped_data = salary.groupby(['Year', 'Job Description'])['Earnings'].mean()
 
